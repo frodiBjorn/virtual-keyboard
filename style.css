@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #ccc;
+    font-size: 16px;
+    font-family:'Courier New', Courier, monospace
+  }
+  .wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .info {
+    display: flex;
+    align-items: center;
+  }
+  .info__description {
+    margin: 15px;
+  }
+  .keyboard {
+
+  }
+  .textarea {
+    width: 850px;
+    height: 200px;
+    margin: 20px;
+  }

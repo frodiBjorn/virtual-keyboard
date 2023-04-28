@@ -9,7 +9,7 @@ const createElement = (tag, classList, content = '') => {
 
 
 const createContent = () => {
-    const container = createElement('div', 'container');
+    const wrapper = createElement('div', 'wrapper');
     const info = createElement('div', 'info');
     const infoTitle = createElement('h1', 'info__title', 'Virtual Keyboard');
     const infoDescription = createElement('p', 'info__description', 'Клавиатура создана в ОС Windows<br>Для переключения языка комбинация: левыe shift + alt');
@@ -18,8 +18,8 @@ const createContent = () => {
   
   
     info.append(infoTitle, infoDescription);
-    container.append(info, textarea, keyboard);
-    return container;
+    wrapper.append(info, textarea, keyboard);
+    return wrapper;
   };
   
 
