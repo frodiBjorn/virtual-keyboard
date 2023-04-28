@@ -1,3 +1,5 @@
+import keys from './keys.js';
+import createKey from './createKey.js';
 
 const createElement = (tag, classList, content = '') => {
     const element = document.createElement(tag);
@@ -16,12 +18,18 @@ const createContent = () => {
     const textarea = createElement('textarea', 'textarea');
     const keyboard = createElement('div', 'keyboard');
   
+
+    Object.keys(keys).forEach((key) => {
+      const keyboardKey = createKey(key, keys[key]);
+      keyboard.append(keyboardKey);
+    });
   
     info.append(infoTitle, infoDescription);
     wrapper.append(info, textarea, keyboard);
     return wrapper;
   };
   
+
 
   const createApp = () => {
     const content = createContent();
