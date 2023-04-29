@@ -1,6 +1,11 @@
 import keys from './keys.js';
 import createKey from './createKey.js';
 
+
+let isCapsLock = false;
+let isShift = false;
+let currentState = null;
+
 const createElement = (tag, classList, content = '') => {
     const element = document.createElement(tag);
     element.classList = classList;
@@ -29,11 +34,33 @@ const createContent = () => {
     return wrapper;
   };
   
-
+  const setCurrentState = () => {
+    if (lang.isEnLang && (!isShift && !isCapsLock)) {
+      currentState = 'en';
+    } else if (!lang.isEnLang && (!isShift && !isCapsLock)) {
+      currentState = 'ru';
+    } else if (lang.isEnLang && isShift) {
+      currentState = 'shiftEn';
+    } else if (!lang.isEnLang && isShift) {
+      currentState = 'shiftRu';
+    } else if ((lang.isEnLang && isCapsLock)) {
+      currentState = 'capsLockEn';
+    } else {
+      currentState = 'capsLockRu';
+    }
+  };
+  const keysCurrentValue = () => {
+    setCurrentState();
+    const valuesOfKeys = document.querySelectorAll('.keyboard__key span');
+    const currentValueOfKeys = document.querySelectorAll(`.keyboard__key-${currentProperty}`);
+    valuesOfKeys.forEach((key) => key.classList.add('hidden'));
+    currentValueOfKeys.forEach((keyValue) => keyValue.classList.remove('hidden'));
+  };
 
   const createApp = () => {
     const content = createContent();
     document.body.append(content);
+    keysCurrentValue()
   };
 
 export default createApp;
