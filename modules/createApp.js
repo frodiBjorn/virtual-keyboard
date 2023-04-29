@@ -1,5 +1,6 @@
 import keys from './keys.js';
 import createKey from './createKey.js';
+import lang from './lang.js';
 
 
 let isCapsLock = false;
@@ -35,9 +36,9 @@ const createContent = () => {
   };
   
   const setCurrentState = () => {
-    if (lang.isEnLang && (!isShift && !isCapsLock)) {
+    if (lang.isEnLang && ((!isShift && !isCapsLock) || (isShift && isCapsLock))) {
       currentState = 'en';
-    } else if (!lang.isEnLang && (!isShift && !isCapsLock)) {
+    } else if (!lang.isEnLang && ((!isShift && !isCapsLock) || (isShift && isCapsLock))) {
       currentState = 'ru';
     } else if (lang.isEnLang && isShift) {
       currentState = 'shiftEn';
@@ -52,7 +53,7 @@ const createContent = () => {
   const keysCurrentValue = () => {
     setCurrentState();
     const valuesOfKeys = document.querySelectorAll('.keyboard__key span');
-    const currentValueOfKeys = document.querySelectorAll(`.keyboard__key-${currentProperty}`);
+    const currentValueOfKeys = document.querySelectorAll(`.keyboard__key-${currentState}`);
     valuesOfKeys.forEach((key) => key.classList.add('hidden'));
     currentValueOfKeys.forEach((keyValue) => keyValue.classList.remove('hidden'));
   };
