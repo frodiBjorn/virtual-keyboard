@@ -36,7 +36,7 @@ const keys = {
       en: '-', ru: '-', shiftEn: '_', shiftRu: '_', capsLockEn: '-', capsLockRu: '-',
     },
     Equal: {
-      en: '=', ru: '=', shiftEn: '+', shiftRu: '+', capsLockEn: '+', capsLockRu: '+',
+      en: '=', ru: '=', shiftEn: '+', shiftRu: '+', capsLockEn: '=', capsLockRu: '=',
     },
     Backspace: {
       en: 'Backspace', ru: 'Backspace', shiftEn: 'Backspace', shiftRu: 'Backspace', capsLockEn: 'Backspace', capsLockRu: 'Backspace',

@@ -48,6 +48,28 @@
     cursor: pointer;
     transition: all 0.2s ease-in-out 0s;
   }
+  .keyboard__key:hover {
+    background-color: #42434e;
+  }
+  .keyboard__key:active, .keyboard__key.active {
+    background-color: #839ae0;
+    border-radius: 15px;
+  }
+  .keyboard__key-Space {
+    width: 386px;
+  }
+  .keyboard__key-Enter, .keyboard__key-ShiftRight {
+    width: 104px;
+  }
+  .keyboard__key-Backspace, .keyboard__key-CapsLock, .keyboard__key-ShiftLeft {
+    width: 116px;
+  }
+  .keyboard__key-Tab {
+    width: 62px;
+  }
+  .keyboard__key-Backspace, .keyboard__key-CapsLock, .keyboard__key-Tab, .keyboard__key-Delete, .keyboard__key-Enter, .keyboard__key-ShiftLeft, .keyboard__key-ShiftRight, .keyboard__key-ArrowUp, .keyboard__key-ControlLeft, .keyboard__key-ControlRight, .keyboard__key-MetaLeft, .keyboard__key-AltLeft, .keyboard__key-AltRight, .keyboard__key-Space, .keyboard__key-ArrowLeft, .keyboard__key-ArrowDown, .keyboard__key-ArrowRight {
+    background-color: rgb(75, 75, 75);
+  }
   .textarea {
     width: 850px;
     height: 200px;
