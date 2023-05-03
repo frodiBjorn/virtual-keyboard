@@ -106,7 +106,12 @@ const addKeyboardHandler = () => {
 const checkKey = (key) => {
   const keyDom = document.querySelector(`.keyboard__key-${key}`);
   if (key === 'ShiftLeft' || key === 'ShiftRight') {
-    isShift = true;
+    isShift = !isShift;
+    if (isShift) {
+      keyDom.classList.add('active');
+    } else {
+      keyDom.classList.remove('active');
+    }
     keysCurrentValue();
   } else if (key === 'CapsLock') {
     isCapsLock = !isCapsLock;
