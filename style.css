@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #ccc;
+    font-size: 16px;
+    font-family:'Courier New', Courier, monospace
+  }
+  .hidden {
+    display: none;
+  }
+  .wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .info {
+    display: flex;
+    align-items: center;
+  }
+  .info__description {
+    margin: 15px;
+  }
+  .keyboard {
+    padding: 20px;
+    background-color: #eaeaea;
+    border-radius: 5px;
+    max-width: 865px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .keyboard__key {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    margin: 2px;
+    color: #ffffff;
+    font-weight: 700;
+    background-color: #555664;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out 0s;
+  }
+  .keyboard__key:hover {
+    background-color: #42434e;
+  }
+  .keyboard__key:active, .keyboard__key.active {
+    background-color: #839ae0;
+    border-radius: 15px;
+  }
+  .keyboard__key-Space {
+    width: 386px;
+  }
+  .keyboard__key-Enter, .keyboard__key-ShiftRight {
+    width: 104px;
+  }
+  .keyboard__key-Backspace, .keyboard__key-CapsLock, .keyboard__key-ShiftLeft {
+    width: 116px;
+  }
+  .keyboard__key-Tab {
+    width: 62px;
+  }
+  .keyboard__key-Backspace, .keyboard__key-CapsLock, .keyboard__key-Tab, .keyboard__key-Delete, .keyboard__key-Enter, .keyboard__key-ShiftLeft, .keyboard__key-ShiftRight, .keyboard__key-ArrowUp, .keyboard__key-ControlLeft, .keyboard__key-ControlRight, .keyboard__key-MetaLeft, .keyboard__key-AltLeft, .keyboard__key-AltRight, .keyboard__key-Space, .keyboard__key-ArrowLeft, .keyboard__key-ArrowDown, .keyboard__key-ArrowRight {
+    background-color: rgb(75, 75, 75);
+  }
+  .textarea {
+    width: 850px;
+    height: 200px;
+    margin: 20px;
+  }
